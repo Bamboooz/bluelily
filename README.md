@@ -4,7 +4,7 @@ src="https://github.com/Bamboooz/bluelily/blob/master/art/icon.png?raw=true" />
 </p>
 
 <p align="center">
-'bluelily is an efficient library to manage GitHub data from python 🌸
+bluelily is an efficient library to manage GitHub data from python 🌸
 <br/>
 It allows for such actions as getting GitHub's repository or user information, but also pushing code to it etc.
 </p>
