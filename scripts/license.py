@@ -1,4 +1,4 @@
-# Copyright (c) 2022, Bamboooz
+# Copyright (c) 2023, Bamboooz
 # All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -6,7 +6,7 @@
 import os
 
 
-notice = '''# Copyright (c) 2022, Bamboooz
+notice = '''# Copyright (c) 2023, Bamboooz
 # All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -38,5 +38,5 @@ def process_file(file_path):
 
 if __name__ == "__main__":
     parent = os.path.dirname
-    directory_path = os.path.join(parent(parent(__file__)), "src")
+    directory_path = os.path.join(parent(parent(__file__)), "bluelily")
     process_files(directory_path)

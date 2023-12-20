@@ -1,11 +1,9 @@
-# Copyright (c) 2022, Bamboooz
+# Copyright (c) 2023, Bamboooz
 # All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
 import enum
-
-from src.bluelily.bluelily import log_actions
 
 
 class Level(enum.Enum):
@@ -15,11 +13,13 @@ class Level(enum.Enum):
 
 
 def log(msg: str, log_level: Level):
-    log = {
+    from bluelily import log_actions
+
+    log_msg = {
         Level.INFO: lambda: print(f"[bluelily: info]: {msg}"),
         Level.WARN: lambda: print(f"[bluelily: warn]: {msg}"),
         Level.ERR: lambda: print(f"[bluelily: err]: {msg}"),
     }
 
     if log_actions:
-        log[log_level]()
+        log_msg[log_level]()
