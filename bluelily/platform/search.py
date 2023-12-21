@@ -9,5 +9,9 @@ from enums import (
 )
 
 
-def search(query: str, search_by: Sort, search_range: range, sort_order: SortOrder = SortOrder.DESCENDING):
+def search_repositories(query: str, search_by: Sort, search_range: range, sort_order: SortOrder = SortOrder.DESCENDING):
+    return
+
+
+def search_users(query: str, search_by: Sort, search_range: range, sort_order: SortOrder = SortOrder.DESCENDING):
     return

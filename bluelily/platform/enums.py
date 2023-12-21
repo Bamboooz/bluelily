@@ -6,6 +6,11 @@
 from enum import Enum
 
 
+class Language:
+    ANY = "any"
+    PYTHON = "python"
+
+
 class SpokenLanguage(Enum):
     ANY = "any"
 

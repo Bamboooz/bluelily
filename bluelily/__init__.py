@@ -11,4 +11,4 @@ from bluelily.components.User.user import User
 
 
 token = None
-log_actions = False
+log_actions = True

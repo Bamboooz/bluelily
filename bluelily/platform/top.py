@@ -27,9 +27,14 @@ def top_repositories(number: int, sort: Sort, sort_order: SortOrder = SortOrder.
     if sort == Sort.FOLLOWERS:
         sort = Sort.WATCHERS
 
-    api_call_url = f"https://api.github.com/search/repositories?q={sort.value}:{sort_order.value}0&sort={sort.value}"
+    api_call_url = "https://api.github.com/search/repositories"
 
-    response = requests.get(api_call_url)
+    params = {
+        "q": f"{sort}:{sort_order.value}0",
+        "sort": sort.value,
+    }
+
+    response = requests.get(api_call_url, params=params)
 
     if response.status_code == 200:
         log(f"Successfully fetched top GitHub repositories, sorted by {sort.value}.", Level.INFO)
