@@ -3,11 +3,12 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-from bluelily.components.Repository.commit import Commit
-from bluelily.components.Repository.branch import Branch
-from bluelily.components.Repository.repo import Repository
-from bluelily.components.Repository.changes import Changes
-from bluelily.components.User.user import User
+from bluelily.components.commit import Commit
+from bluelily.components.changes import Changes
+from bluelily.components.user import User
+from bluelily.components.repo import Repository
+from bluelily.components.gist import Gist
+from bluelily.components.branch import Branch
 
 
 token = None

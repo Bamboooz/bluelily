@@ -25,7 +25,7 @@ from enums import (
 
 
 TOP_QUERY_TYPES = Type[Repository | User]
-SEARCH_QUERY_TYPES = Type[Repository | User | Commit]  # todo: ad pr's discussions etc. when i implement them
+SEARCH_QUERY_TYPES = Type[Repository | User | Commit]  # todo: add pr's discussions etc. when i implement them
 
 
 class GitHub:

@@ -15,3 +15,5 @@ class Branch:
         self.branch_name = branch_name
         self.parent_repo = repo
         self.folder_name = f"{repo.repo}-{branch_name}"
+        self.url = f"https://github.com/{repo.user}/{repo.repo}/tree/{branch_name}"
+        self.api_url = f"https://api.github.com/repos/{repo.user}/{repo.repo}/branches/{branch_name}"

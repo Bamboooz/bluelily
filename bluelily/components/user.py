@@ -5,6 +5,8 @@
 
 import requests
 
+from bluelily import token
+
 from bluelily.logging import (
     log,
     Level
@@ -22,7 +24,15 @@ class User:
         log(f"Successfully initiated {self.user} GitHub user.", Level.INFO)
 
     def _fetch_data(self):
-        response = requests.get(self.api_url)
+        headers = {
+            'Authorization': f'token {token}',
+            'Accept': 'application/vnd.github.v3+json',
+        }
+
+        if token is not None:
+            response = requests.get(self.api_url, headers=headers)
+        else:
+            response = requests.get(self.api_url)
 
         if response.status_code == 200:
             log(f"Successfully fetched {self.user} GitHub user information.", Level.INFO)

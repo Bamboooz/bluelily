@@ -5,6 +5,8 @@
 
 import requests
 
+from bluelily import token
+
 from enums import (
     Sort,
     SortOrder
@@ -29,12 +31,20 @@ def top_repositories(number: int, sort: Sort, sort_order: SortOrder = SortOrder.
 
     api_call_url = "https://api.github.com/search/repositories"
 
+    headers = {
+        'Authorization': f'token {token}',
+        'Accept': 'application/vnd.github.v3+json',
+    }
+
     params = {
         "q": f"{sort}:{sort_order.value}0",
         "sort": sort.value,
     }
 
-    response = requests.get(api_call_url, params=params)
+    if token is not None:
+        response = requests.get(api_call_url, params=params, headers=headers)
+    else:
+        response = requests.get(api_call_url, params=params)
 
     if response.status_code == 200:
         log(f"Successfully fetched top GitHub repositories, sorted by {sort.value}.", Level.INFO)
